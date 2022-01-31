@@ -42,7 +42,7 @@ foreach($files as $file) {
 
         // Upload data.
         $result = $s3->putObject([
-            'Bucket' => 'ptrunners',
+            'Bucket' => $_ENV['S3_BUCKET'],
             'Key'    => "$filename.zip",
             'ACL'    => 'public-read',
             'SourceFile' => "$path/$filename.zip"
